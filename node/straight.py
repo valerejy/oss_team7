@@ -9,8 +9,9 @@ from tf.transformations import quaternion_from_euler
 from move_base_msgs.msg import MoveBaseAction, MoveBaseGoal
 
 
-rospy.init_node("cmd_node")
+rospy.init_node("straight_node")
 my_publisher = rospy.Publisher('cmd_vel', Twist, queue_size=10)
+client = actionlib.SimpleActionClient('move_base', MoveBaseAction)
 
 print(client.wait_for_server())
 
