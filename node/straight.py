@@ -21,7 +21,7 @@ def update_init_pose(self, x, y, theta):
     init_pose.pose.pose.position.x = 0.0
     init_pose.pose.pose.position.y = 0.0
     init_pose.pose.pose.position.orientation.w = 0.0
-    q = quaterntion_from_euler(0.0, 0.0, theta)
+    q = quaternion_from_euler(0.0, 0.0, theta)
     init_pose.pose.pose.orientation.x = q[0]
     init_pose.pose.pose.orientation.y = q[1]
     init_pose.pose.pose.orientation.z = q[2]
@@ -44,14 +44,5 @@ def send_goal(x, y, theta):
 update_init_pose(0.2,0.3,0.0)
 send_goal(1.0,0.3,0.0)
 
-def send_cmd(v,w):
-    twist = Twist()
-    twist.linear.x = v
-    twist.angular.z = w
-    my_publisher.publish(twist)
-
 def main(self):
     rospy.spin()
-
-send_cmd(0.1,0.0)
-
