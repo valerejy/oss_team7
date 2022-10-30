@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.0.2)
-project(test)
+project(team7)
 
 
 find_package(catkin REQUIRED COMPONENTS
@@ -16,4 +16,8 @@ catkin_package(
 catkin_install_python(PROGRAMS
    node/straight.py
    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+ )
+
+ install(DIRECTORY launch
+  DESTINATION ${CATKIN_PACKAGE_DESTINATION}
  )
